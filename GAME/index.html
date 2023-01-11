@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<style>
+#animate  { width: 100px; height: 100px; position:fixed;}
+#top{positive:fixed;}
+.nav{background-color:black; height: 65px;position:relative;width:100%;float:left}
+.sidestyle {list-style:none;margin:0;padding:0;width:29%;fLoat:left;height:100%;background-color:#cecece;position:fixed; }
+#background{background-image: url("black-g47c702473_1920.jpg");background-repeat: repeat;}
+#name{position: absolute;
+text-align: center;
+top:65%;
+left:50%;
+transform: translate(-50%, -50%);color:white}
+li button {color: inherit;display: block;font-size: 1.2rem;
+    padding: 20px;
+    text-decoration: none ;width:100%;
+}
+li button:hover {
+    background-color: rgb(115, 115, 115);
+    color:white;
+}
+
+.dot:hover {
+    background-color:;
+    color:red;}
+#rightbackground{background-image: url("")}
+.img{
+    filter:drop-shadow(0px 0px 10px rgba(0,0,0,.5)) ;
+  }
+.img-tr {
+    filter:drop-shadow(0px 0px 10px rgba(0,0,0,.5)) ;
+  width: 250px; height: 250px;}
+
+@media (max-width: 960px) {
+  .warp {
+    flex-direction: column;
+    width: 100%;
+  }
+  .warp div {
+    width: auto;
+  }
+}
+h1{position: absolute;
+text-align: center;
+top:65%;
+left:50%;
+transform: translate(-50%, -50%);}
+</style>
+<body onkeydown="eval(event)">
+
+
+</div>
+<div id="rightbackground" style="width:30%;fLoat:left;height:1000px;;background-color:#cecece;"></div>
+<div class="sidestyle">
+<li><button onclick="add()"><text  style="font-size:30px"><b>生命:<text id="counter0">100</text></b></text></button></li>
+<li><button><text  style="font-size:30px"><b> 水:<text id="counter">0/MAX</text>
+</b></text></button></li>
+<li><button><text  style="font-size:30px"><b> 米:<text id="counter1">0</text><text id="rice-max">/20</text></text></button></li>     
+<li><button><text  style="font-size:30px"><b> 牛奶:<text id="counter2">0/MAX</text></b></text></button></li>
+<li><button><text  style="font-size:30px"><b> 肉類:<text id="counter3">0/60</text></b></text></button></li>
+<li><button><text  style="font-size:30px"><b> 蔬菜:<text id="counter4">0/60</text></b></text></button></li>
+<li><button><text  style="font-size:30px"><b> 維他命:<text id="counter5">0</text>/10</b></text></button></li>
+<li><text  style="font-size:30px;"><b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp分數:<text id="score">0</text></b></text><br><text  style="font-size:5px;">(圖片來自pngtree)</text></li>
+</div>
+<div id="background" style="width:70%;float:left;height:1000px;background-position:fixed;">
+<div id="animate" class="dot"><img class="img-tr" src="—Pngtree—farmer labor cartoon vector material_6283653.png"><strong><text class="dot" id="name">職業:佃農</text></storng></div>
+
+<div style="float:right"><button onclick="hit()"><img class="img-tr" src="—Pngtree—cartoon water_3782237.png"><text id=time></text></button></div>
+<br>
+<br>
+<div  style="float:none"><button onclick="hit1()"><img class="img-tr" src="—Pngtree—cartoon insert farming farmer_3886820.png"></button></div>
+<br>
+<br>
+
+<div  style="float:right"><button onclick="hit2()"><img class="img-tr" src="pngtree-cow-dream-fantasy-fantasy-fantasy-png-image_489512.jpg"></button></div>
+<br>
+<br>
+
+<div  style="float:none"><button onclick="hit3()"><img class="img-tr" src="—Pngtree—beef background big fish and_3962376.png"></button></div>
+<br>
+<br>
+<div  style="float:right"><button onclick="hit4()"><img class="img-tr" src="81162752.jpg"></button></div>
+<br>
+<br>
+<div  style="float:none"><button onclick="hit5()"><img class="img-tr" src="pngtree-capsule-drug-cartoon-illustration-png-image_4575741.jpg"></button></div>
+
+
+</div>
+
+
+<script>
+let id = setInterval(life,2500);
+let number0=100
+
+function life() {if(number0>0){
+number0=number0-1
+document.getElementById("counter0").innerHTML = number0;
+
+}
+else{document.getElementById("counter0").innerHTML = "危險"}}
+let time=60
+setInterval(function(){
+document.getElementById('time').innerHTML=time();
+}, 1000)
+
+let score=0
+function add() {
+if(number5>=10){
+number0=number0+10
+number5=number5-10
+score=score+10
+document.getElementById("counter0").innerHTML = number0;
+document.getElementById("counter5").innerHTML = number5;
+document.getElementById("score").innerHTML = score;
+}}
+
+
+
+
+let number=0
+function hit() {
+number=number+1
+score=score+1
+document.getElementById("counter").innerHTML = number+"/MAX";
+document.getElementById("score").innerHTML = score
+}
+
+let number1=0
+function hit1() {
+if (number1 >=20){document.getElementById("name").innerHTML="職業:地主";document.getElementById("rice-max").innerHTML="/40"}
+if (number1 >=40){document.getElementById("name").innerHTML="職業:小老闆";document.getElementById("rice-max").innerHTML="/60"}
+if (number1>=60){document.getElementById("name").innerHTML="職業:大老闆";document.getElementById("rice-max").innerHTML="/80"}
+if (number1>=80){document.getElementById("name").innerHTML="職業:名人";document.getElementById("rice-max").innerHTML="/MAX"}
+
+number1=number1+1
+document.getElementById("counter1").innerHTML = number1;
+}
+
+
+let number2=0
+function hit2() {
+number2=number2+1
+score=score+1
+document.getElementById("counter2").innerHTML = number2+"/MAX";
+document.getElementById("score").innerHTML = score;
+}
+
+let number3=0
+function hit3() {if (number3>=60){document.getElementById("counter3").innerHTML = "任務完成"}
+else{number3=number3+1
+document.getElementById("counter3").innerHTML = number3+"/60";}
+
+
+}
+
+let number4=0
+function hit4() {if (number4>=60){document.getElementById("counter4").innerHTML = "任務完成"}
+else{number4=number4+1
+document.getElementById("counter4").innerHTML = number4+"/60"}
+}
+
+let number5=0
+function hit5() {
+number5=number5+1
+document.getElementById("counter5").innerHTML = number5;
+}
+
+function eval(event) {
+let elem = document.getElementById("animate");
+let x = elem.offsetLeft || 0;
+let y = elem.offsetTop || 0;
+let key = event.which || event.keyCode;
+switch(key){
+case 38:
+elem.style.top = (y-30) + 'px';
+break;
+case 40:
+elem.style.top = (y+30) + 'px';
+break;
+case 37:
+elem.style.left = (x-30) + 'px';
+break;
+case 39:
+elem.style.left = (x+30) + 'px';
+break;
+}
+}
+
+</script>
+</body></html>
